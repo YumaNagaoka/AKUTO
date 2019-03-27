@@ -1,0 +1,18 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <p>
+        バンド名：<%= @band.band_name %><br>
+        人数：<%= @band.number_of_people %><br>
+        所要時間：<%= @band.time %><br>
+        メンバー：<br><%= @band.member_1 %><br>
+        <%= @band.member_2 %><br>
+        <%= @band.member_3 %><br>
+        
+      </p>
+      <div class="post-time">
+        <%= @band.created_at %>
+      </div>
+    </div>
+  </div>
+</div>

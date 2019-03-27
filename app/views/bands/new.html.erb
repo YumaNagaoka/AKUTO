@@ -1,0 +1,18 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">申請する</h1>
+    <%= form_tag("/bands/create") do %>
+      <div class="form">
+        <div class="form-body">
+          バンド名：<input type="text" name="name">
+          人数：<input type="number" name="number_of_people">
+          時間：<input type="number" name="time">
+          メンバー：<input type="text" name="member_1"><br>
+          <input type="text" name="member_2"><br>
+          <input type="text" name="member_3"><br>
+          <input type="submit" value="申請">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="main posts-index">
+  <div class="container">
+    <% @bands.each do |band| %>
+      <div class="posts-index-item">
+        <%= link_to(band.band_name, "/bands/#{band.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>
