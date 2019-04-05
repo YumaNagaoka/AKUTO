@@ -10,15 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_120318) do
+ActiveRecord::Schema.define(version: 2019_04_05_150831) do
 
   create_table "bands", force: :cascade do |t|
     t.string "band_name"
     t.string "number_of_people"
     t.string "time"
-    t.string "member_1"
-    t.string "member_2"
-    t.string "member_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.string "name"
+    t.integer "band_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

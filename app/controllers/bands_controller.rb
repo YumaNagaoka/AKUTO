@@ -5,14 +5,23 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find_by(id: params[:id])
+    @participants = Participant.where(band_id: params[:id])
   end
 
   def new
   end
   
   def create
-    @band = Band.new(band_name: params[:name], number_of_people: params[:number_of_people], time: params[:time], member_1: params[:member_1], member_2: params[:member_2], member_3: params[:member_3])
+    #bandテーブルにバンド名と人数と所要時間を保存する
+    @band = Band.new(band_name: params[:name], number_of_people: params[:number_of_people], time: params[:time])
     @band.save
+    #participantテーブルにメンバーの名前とバンドidを保存する
+    member = params[:member]
+    id = Band.last.id
+    params[:number_of_people].to_i.times do |i|   
+      @participant = Participant.new(name: member[i], band_id: id)
+      @participant.save
+    end
     redirect_to("/bands/index")
   end
 end

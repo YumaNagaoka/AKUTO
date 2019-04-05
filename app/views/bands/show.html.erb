@@ -5,10 +5,11 @@
         バンド名：<%= @band.band_name %><br>
         人数：<%= @band.number_of_people %><br>
         所要時間：<%= @band.time %><br>
-        メンバー：<br><%= @band.member_1 %><br>
-        <%= @band.member_2 %><br>
-        <%= @band.member_3 %><br>
-        
+        メンバー：
+        <br><% 
+          @participants.each do |member|%>
+            <%= member.name %><br>
+          <% end %>    
       </p>
       <div class="post-time">
         <%= @band.created_at %>
