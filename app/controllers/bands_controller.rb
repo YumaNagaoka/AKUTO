@@ -22,6 +22,6 @@ class BandsController < ApplicationController
       @participant = Participant.new(name: member[i], band_id: id)
       @participant.save
     end
-    redirect_to("/bands/index")
+    redirect_to("/bands/new")
   end
 end
